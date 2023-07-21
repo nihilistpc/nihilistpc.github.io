@@ -1,44 +1,108 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html data-bs-theme="auto" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta charset="utf-8" />
-<title>3D Model</title>
-<script type="text/javascript" src="iv3d.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>3D Model</title>
+    <meta name="description" content="This is my personal website">
+    <script>
+        (function() {
 
-<link rel="stylesheet" type="text/css" href="ivstyles.css"/>
+            // JavaScript snippet handling Dark/Light mode switching
 
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
 
-<style type="text/css">
-body {
-    overflow:hidden;
-    margin: 0px;
-}
+            const getPreferredTheme = () => {
 
-</style>
-<script type="text/javascript">
-var view3d;
+                if (forcedTheme) return forcedTheme;
 
-function ivCommonInit3d() {
-    var canvas = document.getElementById("ivwindow3d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
 
-    view3d = new iv.window({ canvas: canvas, color: 0x282828 });
-    var mv = new iv.modelviews(view3d);
-    view3d.load("scene.iv3d");
-}
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
 
-window.onresize = function(){view3d.setViewSize(window.innerWidth,window.innerHeight);}
+                if (pageTheme) {
+                    return pageTheme;
+                }
 
-</script>
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
 
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const themeSwitcherText = document.querySelector('#theme-text');
+                    const activeThemeIcon = document.querySelector('.theme-icon-active use');
+                    const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                        element.classList.remove('active');
+                        element.setAttribute('aria-pressed', 'false');
+                    });
+
+                    btnToActive.classList.add('active');
+                    btnToActive.setAttribute('aria-pressed', 'true');
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+    <link rel="stylesheet" href="assets/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/ivstyles.css">
 </head>
 
-<body onload="ivCommonInit3d()">
-<div>
-    <canvas id="ivwindow3d" style="border:none" width="640" height="480"></canvas>
-</div>
-<div class="modelviewspanel" id="modelviewspanel"></div>
+<body>
+    <div><canvas id="ivwindow3d" style="border:none;" width="640" height="480"></canvas></div>
+    <div class="modelviewspanel" id="modelviewspanel"></div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/pikaday.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/iv3d.js"></script>
 </body>
 
 </html>
