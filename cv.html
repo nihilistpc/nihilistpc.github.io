@@ -6,22 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>CV - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/Lato.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="assets/css/Dark-Mode-Switch.css">
+    <link rel="stylesheet" href="assets/css/Features-Large-Icons-icons.css">
+    <link rel="stylesheet" href="assets/css/Lightswitch.css">
     <link rel="stylesheet" href="assets/css/pikaday.min.css">
 </head>
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-opacity-25 portfolio-navbar gradient">
-        <div class="container"><a class="navbar-brand logo" href="#">Brand</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="index.html">Ahmed N. Al Fahdi</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects-grid-cards.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="PDO.html">PDO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects-no-images.html">GuTech</a></li>
                     <li class="nav-item"><a class="nav-link active" href="cv.html">CV</a></li>
-                    <li class="nav-item"><a class="nav-link" href="hire-me.html">Hire me</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="Pihole.html">Other Projects</a>
+                        <div class="dropdown-menu dropdown-menu-dark"><a class="dropdown-item" href="#">Home server</a><a class="dropdown-item" href="#">Third Item</a><a class="dropdown-item" href="#">Menu Item</a>
+                            <div class="dropdown-divider"></div>
+                            <h6 class="dropdown-header">Ongoing&nbsp;</h6><a class="dropdown-item" href="#">Unreal Engine</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
+<div class="form-check form-switch ms-auto mt-3 me-3">
+  <label class="form-check-label ms-3" for="lightSwitch">
+    <svg 
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      fill="currentColor"
+      id="lightswitchLightIcon"
+      class="bi bi-brightness-high"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+      />
+    </svg>
+      <svg xmlns="http://www.w3.org/2000/svg"
+      id="lightswitchDarkIcon"
+      fill="currentColor"
+      class="bi bi-brightness-high"
+      width="32px" height="32px" viewBox="0 0 32 32" version="1.1">
+<path d="M9.882 5.052c-0.847 1.717-1.295 3.614-1.295 5.564 0 6.977 5.676 12.653 12.653 12.653 2.052 0 4.035-0.489 5.812-1.412-2.15 3.869-6.248 6.37-10.862 6.37-6.866 0-12.451-5.585-12.451-12.451 0-4.491 2.409-8.533 6.143-10.724zM12.79 2.707c-5.817 1.509-10.118 6.78-10.118 13.069 0 7.465 6.053 13.517 13.518 13.517 6.387 0 11.726-4.435 13.139-10.389-2.087 2.039-4.939 3.298-8.088 3.298-6.399 0-11.587-5.188-11.587-11.587 0-3.061 1.196-5.838 3.137-7.909v0z">
+
+</path>
+</svg>
+  </label>
+  <input title="Toggle dark mode" placeholer="" class="form-check-input lightswitch-enlarge" type="checkbox" id="lightSwitch" />
+</div>
         </div>
     </nav>
     <main class="page cv-page">
@@ -42,9 +79,9 @@
                     <div class="item">
                         <div class="row">
                             <div class="col-md-6">
-                                <h3>Web Developer</h3><span class="badge rounded-pill bg-primary">Amazing Co.</span>
+                                <h3>Pipeline Engineer&nbsp;</h3><span class="badge rounded-pill bg-primary">PDO co.</span>
                             </div>
-                            <div class="col-md-6"><span class="text-muted period">10/2013 - 04/2015</span></div>
+                            <div class="col-md-6"><span class="text-muted period">10/2021 - 04/2022</span></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget velit ultricies, feugiat est sed, efficitur nunc, vivamus vel accumsan dui.</p>
                     </div>
@@ -54,15 +91,6 @@
                                 <h3>Front End Developer</h3><span class="badge rounded-pill bg-primary">Innovative&nbsp;Org.</span>
                             </div>
                             <div class="col-md-6"><span class="text-muted period">05/2015 - 12/2017</span></div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget velit ultricies, feugiat est sed, efficitur nunc, vivamus vel accumsan dui.</p>
-                    </div>
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3>Web Developer</h3><span class="badge rounded-pill bg-primary">Special&nbsp;Inc.</span>
-                            </div>
-                            <div class="col-md-6"><span class="text-muted period">12/2017 - Present</span></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget velit ultricies, feugiat est sed, efficitur nunc, vivamus vel accumsan dui.</p>
                     </div>
@@ -77,6 +105,15 @@
                                 <h3>High School</h3><span class="badge rounded-pill bg-success">Albert Einstein School</span>
                             </div>
                             <div class="col-6"><span class="text-muted period">09/2005 - 05/2010</span></div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget velit ultricies, feugiat est sed, efficitur nunc, vivamus vel accumsan dui.</p>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Applied Physics</h3><span class="badge rounded-pill bg-success">Stephen Hawking College</span>
+                            </div>
+                            <div class="col-md-6"><span class="text-muted period">09/2010 - 06/2015</span></div>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget velit ultricies, feugiat est sed, efficitur nunc, vivamus vel accumsan dui.</p>
                     </div>
@@ -143,11 +180,14 @@
     </main>
     <footer class="page-footer py-3 border-top">
         <div class="container my-4">
-            <div class="links"><a href="#">About me</a><a href="#">Contact me</a><a href="#">Projects</a></div>
-            <div class="social-icons"><a class="me-3" href="#"><i class="icon ion-social-facebook"></i></a><a class="me-3" href="#"><i class="icon ion-social-instagram-outline"></i></a><a class="me-3" href="#"><i class="icon ion-social-twitter"></i></a></div>
+            <div class="links"><a href="#" style="color: rgba(10,166,254,0.88);">About me</a><a href="#" style="color: rgba(10,166,254,0.88);">Contact me</a><a href="#" style="border-color: rgba(48,132,217,0.75);color: rgba(10,166,254,0.88);">Projects</a></div>
+            <div class="social-icons"><a class="me-3" href="#"><i class="icon ion-social-github"></i></a><a class="me-3" href="#"><i class="icon ion-social-linkedin"></i></a><a class="me-3" href="#"><i class="icon ion-social-twitter"></i></a></div>
         </div>
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/Dark-Mode-Switch-darkmode.js"></script>
+    <script src="assets/js/Lightswitch-lightswitch.js"></script>
     <script src="assets/js/pikaday.min.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
